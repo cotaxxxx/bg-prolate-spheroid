@@ -1,45 +1,65 @@
 # Decisions
 
-This file records durable project decisions. Amend existing entries instead of silently changing conventions.
+This file records durable case-specific project decisions. The normative
+cross-repository rules are in [RESEARCH_RULES.md](RESEARCH_RULES.md).
 
 ## 2026-08-25 — Repository scope
 
-bg-prolate-spheroid is the canonical repository for the prolate-spheroid branch of the basepoint-geometry program.
+`bg-prolate-spheroid` is the canonical repository for the prolate-spheroid
+branch of the basepoint-geometry program.
 
-The repository must not mix oblate, triaxial, frustum, polyhedral, or general-theory calculations into the prolate certification path.
+Oblate, triaxial, frustum, polyhedral, and general-theory calculations do not
+enter the prolate certification path.
+
+## 2026-08-25 — Rules vocabulary
+
+Evidence class and numerical derivation class remain separate. This repository
+uses exactly the vocabulary of `RESEARCH_RULES.md`; it does not define a local
+“verification class.”
+
+## 2026-08-25 — Governance pin
+
+The governing rules and workflow baseline are
+`cotaxxxx/basepoint-geometry@d0a77680997c768d3be5194936814bed74833fe2`.
+See [GOVERNANCE_PIN.md](GOVERNANCE_PIN.md).
+
+A future local workflow must be pinned by exact path and SHA before it enters
+the proof path.
 
 ## 2026-08-25 — Public terminology
 
-Public-facing text uses neutral mathematical terms:
-
-- radial–normal angle;
-- stationary base point;
-- stationary orbit;
-- cone-volume measure.
-
-Project-specific interpretive terminology is not required for the mathematical statements.
-
-## 2026-08-25 — Evidence separation
-
-Exact derivations, interval certification, high-precision computation, exploratory diagnostics, and non-binding material are separate evidence classes.
-
-A stronger label may replace a weaker one only when the new derivation and reproduction instructions are committed in the same revision.
+Public-facing text uses neutral mathematical terms: radial–normal angle,
+stationary base point, stationary orbit, and cone-volume measure.
 
 ## 2026-08-25 — Numerical records
 
-A bare decimal is not a result. Every reported number must include:
+A bare decimal is not a result. Every number must carry its numerical
+derivation class and reproducibility record as required by Research Rule 2.
 
-- the quantity and normalization;
-- the parameter domain;
-- the derivation class;
-- precision and tolerances;
-- software and version where material;
-- a reproducible source or command;
-- an independent verification note when promoted toward certification.
+## 2026-08-25 — Normalization
 
-## 2026-08-25 — Manuscript precedence
+The canonical functional uses the probability measure
 
-The repository is supporting material. The identified submitted or published manuscript governs whenever wording, notation, or claims conflict. The governing manuscript version must be recorded in STATUS.md before a release is tagged.
+\[
+d\mu_{K,p}
+=
+\frac{(x-p)\cdot\nu}{3\,\operatorname{Vol}(K)}\,dA.
+\]
+
+The reduced spheroidal coefficient \(1/2\) is a consequence of this
+normalization after azimuthal integration; it is not an unnormalized
+alternative.
+
+## 2026-08-25 — Author identity
+
+Public attribution uses the real name `古田勝士`. The repository does not use
+`DAYBREAK` as an alternative author identity.
+
+## 2026-08-25 — DOI before migration
+
+The fixed long-spheroid result set receives its DOI before content migration
+begins. Migration must not change the deposited DOI object and must preserve
+source hashes and provenance.
 
 ## 2026-08-25 — Release gate
 
@@ -49,4 +69,5 @@ Before any research release or tag:
 2. run the documented reproduction path;
 3. perform an independent verification;
 4. confirm that manuscript, tables, and code use the same normalization;
-5. record hashes and the verification outcome.
+5. record rules, workflow, source, and artifact hashes;
+6. record the DOI and governing manuscript version.
