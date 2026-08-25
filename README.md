@@ -4,26 +4,23 @@ This repository records the prolate-spheroid branch of the basepoint-geometry re
 
 The object of study is the cone-volume-weighted radial–normal angle functional
 
-[
-E_K(p)=int_{partial K}alpha_{K,p}(x)^2,dmu_{K,p}(x),
-]
+\[
+E_K(p)=\int_{\partial K}\alpha_{K,p}(x)^2\,d\mu_{K,p}(x),
+\]
 
 where
 
-[
-alpha_{K,p}(x)
-=arccos!left(
-rac{(x-p)cdot 
-u(x)}{|x-p|}
-ight),
-qquad
-dmu_{K,p}(x)
-=rac{(x-p)cdot 
-u(x)}{3,mathrm{Vol}(K)},dA(x).
-]
+\[
+\alpha_{K,p}(x)
+=\arccos\!\left(
+\frac{(x-p)\cdot \nu(x)}{|x-p|}
+\right),
+\qquad
+d\mu_{K,p}(x)
+=\frac{(x-p)\cdot \nu(x)}{3\,\mathrm{Vol}(K)}\,dA(x).
+\]
 
-Here (Ksubsetmathbb R^3) is a convex body, (pinoperatorname{int}K), and (
-u) is the outer unit normal.
+Here \(K\subset\mathbb R^3\) is a convex body, \(p\in\operatorname{int}K\), and \(\nu\) is the outer unit normal.
 
 ## Scope
 
