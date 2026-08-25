@@ -1,6 +1,13 @@
-# Status
+# Research Status
 
-Last updated: 2026-08-25
+Updated: 2026-08-25
+
+## Global status
+
+`NOT_BINDING / DIAGNOSTIC_ONLY`
+
+This repository currently contains no certified theorem, certified numerical
+value, approved production kernel, or Actions-produced clean-room certificate.
 
 ## Project
 
@@ -8,38 +15,60 @@ Last updated: 2026-08-25
 **Functional:** cone-volume-weighted squared radial–normal angle  
 **Primary question:** how the stationary base-point set changes as the aspect ratio varies
 
-## Established research direction
+The prolate case is treated through rotational symmetry and reduction to the
+long axis. A final record must distinguish existence, orbit type, axial and
+transverse second variation, bifurcation thresholds, and claim scope.
 
-The prolate case is treated through rotational symmetry and reduction to the long axis. The intended final record must distinguish:
+## Classification contract
 
-1. existence of stationary points;
-2. orbit type under the rotational symmetry;
-3. axial and transverse second-variation information;
-4. bifurcation thresholds;
-5. the level of verification attached to every claim.
+Evidence classes and numerical derivation classes are separate and are defined
+normatively in [RESEARCH_RULES.md](RESEARCH_RULES.md).
 
-## Verification classes
+Evidence classes: `DIAGNOSTIC_ONLY`, `NOT_BINDING`, `PROTOTYPE`,
+`NOT_AUDITED`, `AUDITED_SOURCE`, and `CERTIFIED`.
 
-Use exactly one of the following labels for every quantitative claim:
+Numerical derivation classes: `EXACT`, `CERTIFIED_ENCLOSURE`,
+`HIGH_PRECISION`, `FLOAT`, and `EXTRAPOLATED`.
 
-- **EXACT** — symbolic identity with a written derivation;
-- **INTERVAL_CERTIFIED** — rigorous enclosure produced by documented interval arithmetic;
-- **HIGH_PRECISION** — reproducible arbitrary-precision computation, not itself a proof;
-- **EXPLORATORY** — diagnostic computation or conjectural pattern;
-- **NOT_BINDING** — excluded from the certification path.
+No combined “verification class” is used.
 
-Every numerical entry must also record software, precision, tolerances, and the source file or command that produced it.
+## Normalization
+
+The functional uses the probability measure
+
+\[
+d\mu_{K,p}
+=
+\frac{(x-p)\cdot\nu}{3\,\operatorname{Vol}(K)}\,dA.
+\]
+
+For a rotational spheroid with polar semiaxis \(\lambda\),
+
+\[
+\int_{\partial K}(x-p)\cdot\nu\,dA
+=
+3\operatorname{Vol}(K)
+=
+4\pi\lambda.
+\]
+
+After the azimuthal integration, the normalized axial energy therefore has the
+factor \(1/2\). This is the same normalization used by the oblate axial formula.
+
+## Governance
+
+Rules and workflow baseline are pinned in [GOVERNANCE_PIN.md](GOVERNANCE_PIN.md).
 
 ## Current repository state
 
-The repository structure and evidential conventions were initialized on 2026-08-25.
+Only the repository framework and research-governance documents are present.
+No long-spheroid numerical thresholds or certification claims have been
+migrated.
 
-No numerical thresholds or certification claims are entered here yet. Existing results should be migrated only with their derivation and verification records intact.
+## Publication order
 
-## Next actions
-
-- identify the governing manuscript version and submission record;
-- migrate the one-variable reduction and notation;
-- add reproducible high-precision reference values;
-- add independent checks before any certification tag;
-- record manuscript-to-code correspondence.
+1. Freeze and identify the long-spheroid result set.
+2. Deposit the fixed result set and obtain its DOI.
+3. Record the DOI and governing manuscript version here.
+4. Only then begin migration into this repository.
+5. Preserve hashes and provenance during migration.
