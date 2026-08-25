@@ -2,6 +2,11 @@
 
 This repository records the prolate-spheroid branch of the basepoint-geometry research program.
 
+> **Repository status: `NOT_BINDING / DIAGNOSTIC_ONLY`**
+>
+> This repository currently contains no certified theorem, approved production
+> kernel, or Actions-produced clean-room certificate.
+
 The object of study is the cone-volume-weighted radial–normal angle functional
 
 \[
@@ -20,36 +25,42 @@ d\mu_{K,p}(x)
 =\frac{(x-p)\cdot \nu(x)}{3\,\mathrm{Vol}(K)}\,dA(x).
 \]
 
-Here \(K\subset\mathbb R^3\) is a convex body, \(p\in\operatorname{int}K\), and \(\nu\) is the outer unit normal.
+Here \(K\subset\mathbb R^3\) is a convex body, \(p\in\operatorname{int}K\), and
+\(\nu\) is the outer unit normal.
+
+## Normalization check
+
+The measure above is a probability measure because
+
+\[
+\int_{\partial K}(x-p)\cdot\nu\,dA=3\,\mathrm{Vol}(K).
+\]
+
+For a rotational spheroid with polar semiaxis \(\lambda\), this denominator is
+\(4\pi\lambda\). The azimuthal integration supplies \(2\pi\lambda\), leaving
+the coefficient \(1/2\) in the reduced axial formula. Thus the prolate and
+oblate repositories use the same normalized mean energy.
 
 ## Scope
 
-This repository is restricted to prolate spheroids and their stationary base points. Its principal themes are:
+This repository is restricted to prolate spheroids and their stationary base
+points. Its principal themes are symmetry reduction to the long axis,
+stationary-orbit bifurcation, transverse stability, reproducible computation,
+and rigorous certification.
 
-- symmetry reduction to the long axis;
-- stationary-orbit bifurcation as the aspect ratio varies;
-- transverse stability of axial stationary points;
-- reproducible numerical exploration;
-- rigorous certification of the reported bifurcation picture.
+## Current state and publication order
 
-The terminology used here is deliberately neutral: *radial–normal angle*, *stationary base point*, and *stationary orbit*.
+No result migration has begun. The fixed long-spheroid result set must receive
+its DOI before migration into this repository.
 
-## Research status
+## Repository documents
 
-The research record is divided by evidential role:
-
-- [STATUS.md](STATUS.md) — current results, open questions, and verification state;
-- [DECISIONS.md](DECISIONS.md) — durable conventions and methodological decisions;
-- future analytic or computational material should be placed in clearly named subdirectories and linked from STATUS.md.
-
-No numerical value is authoritative merely because it appears in a script or exploratory output. Each reported quantity must state its derivation class, precision, and verification method.
-
-## Repository policy
-
-This repository is a research record, not a substitute for the submitted manuscript or its peer-reviewed version. If the repository and the manuscript differ, the manuscript version identified in STATUS.md governs.
-
-Exploratory calculations must be marked **NOT_BINDING** until independently reproduced or rigorously certified.
+- [Research rules](RESEARCH_RULES.md)
+- [Governance pin](GOVERNANCE_PIN.md)
+- [Research status](STATUS.md)
+- [Case-specific decisions](DECISIONS.md)
 
 ## Author
 
-Independent research by DAYBREAK, a graduate of the College of Law, Ritsumeikan University.
+古田勝士  
+Independent researcher; graduate of the College of Law, Ritsumeikan University.
